@@ -1,0 +1,13 @@
+Recommended online sound sources researched for the next pass:
+
+1) OpenGameArt – "2 dice roll (29 throws)" (CC0)
+   https://opengameart.org/content/2-dice-roll-29-throws
+
+2) OpenGameArt – "Win sound effect" (CC0)
+   https://opengameart.org/content/win-sound-effect
+
+3) OpenGameArt – "UI Sound Effects (Button Clicks, User Feedback, Notifications)" (CC0)
+   https://opengameart.org/content/ui-sound-effects-button-clicks-user-feedback-notifications
+
+Because direct binary fetching in this environment was restricted, the current project uses generated placeholder WAVs.
+Swap them later by replacing files in static/audio/.

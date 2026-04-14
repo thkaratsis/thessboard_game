@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <nav class="mini-nav"><a href="/">Game</a><a href="/privacy">Privacy</a><a href="/credits">Credits</a></nav>
+      <div class="brand-copy">
+        <h1>{{ title }}</h1>
+        <p>Choose a mode, then play on one device, online, or against bots.</p>
+      </div>
+      <div class="room-pill" id="room-pill">Main Menu</div>
+    </header>
+
+    <main class="layout">
+      <section class="board-panel card">
+        <div class="board-wrap">
+          <img id="board-image" src="{{ url_for('static', filename='images/board.png') }}" alt="Board">
+          <div id="node-overlay"></div>
+          <div id="tokens-layer"></div>
+        </div>
+        <div class="hud-row">
+          <div class="dice-card">
+            <div class="dice" id="dice-display">🎲</div>
+            <div class="dice-caption">Τελευταίο ζάρι</div>
+          </div>
+          <div class="turn-card" id="turn-card">Διάλεξε mode από το lobby.</div>
+        </div>
+        <div class="action-row">
+          <button class="primary-btn" id="roll-btn">Ρίξε ζάρι</button>
+          <button class="secondary-btn hidden" id="end-turn-btn">Τέλος σειράς</button>
+        </div>
+      </section>
+
+      <section class="side-panel">
+        <div class="card auth-card">
+          <h2>Lobby</h2>
+          <div class="mode-grid">
+            <button class="mode-btn active" id="mode-hotseat">1 συσκευή / φίλοι</button>
+            <button class="mode-btn" id="mode-multi">Multiplayer</button>
+            <button class="mode-btn" id="mode-bots">Με bots</button>
+          </div>
+          <div id="mode-panel"></div>
+        </div>
+
+        <div class="card players-card">
+          <h2>Παίκτες</h2>
+          <div id="players-list"></div>
+        </div>
+
+        <div class="card interaction-card">
+          <h2>Κάρτα / Ενέργεια</h2>
+          <div id="interaction-box"></div>
+        </div>
+
+        <div class="card log-card">
+          <h2>Καταγραφή</h2>
+          <div id="log-box"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
